@@ -7,35 +7,34 @@
 @if (Model != null)
 {
     <div class="container">
-        <h1>Proyectores</h1>
-        <h3>Información de proyectores registrados</h3>
-        @if (Model.Any())
+        <h1 class="display-4 text-center">Proyectores</h1>
+        <h3 class="text-start mb-3">Información de proyectores registrados</h3>
+        @if (Model.Any<Proyector>())
         {
-            <table>
-                <thead>
-                    <tr>
-                        <th># Proyector</th>
-                        <th>Marca</th>
-                        <th>Modelo</th>
-                        <th># de serie</th>
-                        <th>Situación</th>
-                        <th>Fecha de alta</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var proyector in Model)
-                    {
-                        <tr>
-                            <td>@proyector.Id</td>
-                            <td>@proyector.Marca</td>
-                            <td>@proyector.Modelo</td>
-                            <td>@proyector.NumeroDeSerie</td>
-                            <td>@proyector.Situacion</td>
-                            <td>@proyector.FechaDeAlta.ToString("d")</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+            <div class="row">
+                <div>
+                    <div class="col"># Proyector</div>
+                    <div class="col">Marca</div>
+                    <div class="col">Modelo</div>
+                    <div class="col"># de serie</div>
+                    <div class="col">Situación</div>
+                    <div class="col">Fecha de alta</div>
+                </div>
+            </div>
+
+            <div>  
+                @foreach (Proyector proyector in Model)
+                {
+                    <div class="row">
+                        <div class="col">@proyector.Id</div>
+                        <div class="col">@proyector.Marca</div>
+                        <div class="col">@proyector.Modelo</div>
+                        <div class="col">@proyector.NumeroDeSerie</div>
+                        <div class="col">@proyector.Situacion</div>
+                        <div class="col">@proyector.FechaDeAlta.ToString("d")</div>
+                        </div>
+                }
+            </div>
         }
         else
         {
