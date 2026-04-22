@@ -6,7 +6,7 @@ namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Indexe()
         {
             //ViewData / ViewBag
             //ViewData["Id"] = "1";
@@ -29,6 +29,59 @@ namespace WebApp.Controllers
           
             return View(proyector);
 
+        }
+
+        public IActionResult Index()
+        {
+            var modelo = LoadData();
+            return View(modelo);
+        }
+
+        private IEnumerable<Proyector> LoadData()
+        {
+            var proyectores = new List<Proyector>();
+
+            proyectores.Add(new Proyector()
+            {
+                Id = 1,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = 123456,
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+
+            proyectores.Add(new Proyector()
+            {
+                Id = 3,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = 123456,
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+
+            proyectores.Add(new Proyector()
+            {
+                Id = 4,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = 123456,
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+
+            proyectores.Add(new Proyector()
+            {
+                Id = 5,
+                Marca = "Dell",
+                Modelo = "Lightew",
+                NumeroDeSerie = 346223,
+                Situacion = SituacionProyector.Malo,
+                FechaDeAlta = DateTime.Now
+            });
+
+            return proyectores;
         }
 
         public IActionResult Privacy()
