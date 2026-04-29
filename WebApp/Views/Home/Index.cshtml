@@ -4,26 +4,24 @@
     ViewData["Title"] = "Inicio";
 }
 
-@if (Model != null)
+@if (Model is not  null)
 {
     <div class="container">
         <h1 class="display-4 text-center">Proyectores</h1>
         <div class="row mb-3">
             <h3 class="col-10 text-start mb-3">Información de proyectores registrados</h3>
-            <button class="col-2 btn btn-primary">Nuevo proyector</button>
+            <a class="col-2 btn btn-primary" asp-controller="Home" asp-action="Create">Nuevo proyector</a>
         </div>
 
         @if (Model.Any<Proyector>())
         {
             <div class="row">
-                <div>
-                    <div class="col"># Proyector</div>
-                    <div class="col">Marca</div>
-                    <div class="col">Modelo</div>
-                    <div class="col"># de serie</div>
-                    <div class="col">Situación</div>
-                    <div class="col">Fecha de alta</div>
-                </div>
+                <div class="col"># Proyector</div>
+                <div class="col">Marca</div>
+                <div class="col">Modelo</div>
+                <div class="col"># de serie</div>
+                <div class="col">Situación</div>
+                <div class="col">Fecha de alta</div>
             </div>
 
             <div>  
@@ -36,7 +34,7 @@
                         <div class="col">@proyector.NumeroDeSerie</div>
                         <div class="col">@proyector.Situacion</div>
                         <div class="col">@proyector.FechaDeAlta.ToString("d")</div>
-                        </div>
+                    </div>
                 }
             </div>
         }
