@@ -28,7 +28,7 @@ namespace WebApp.Services
                 Id = 1,
                 Marca = "Epson",
                 Modelo = "Xlight",
-                NumeroDeSerie = 123456,
+                NumeroDeSerie = "123456",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
             });
@@ -38,7 +38,7 @@ namespace WebApp.Services
                 Id = 3,
                 Marca = "Epson",
                 Modelo = "Xlight",
-                NumeroDeSerie = 123456,
+                NumeroDeSerie = "123456",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
             });
@@ -48,7 +48,7 @@ namespace WebApp.Services
                 Id = 4,
                 Marca = "Epson",
                 Modelo = "Xlight",
-                NumeroDeSerie = 123456,
+                NumeroDeSerie = "123456",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
             });
@@ -58,7 +58,7 @@ namespace WebApp.Services
                 Id = 5,
                 Marca = "Dell",
                 Modelo = "Lightew",
-                NumeroDeSerie = 346223,
+                NumeroDeSerie = "346223",
                 Situacion = SituacionProyector.Malo,
                 FechaDeAlta = DateTime.Now
             });

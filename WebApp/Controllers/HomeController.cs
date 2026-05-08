@@ -23,6 +23,18 @@ namespace WebApp.Controllers
         
         public IActionResult Create()
         {
+            if(!ModelState.IsValid)
+            {
+                return View(Proyector);
+            }
+            else
+            {
+
+                _service.AddProyector(Proyector);
+                return RedirectToAction(nameof(Index));
+
+            }
+
             Proyector proyector = new Proyector();
             proyector.FechaDeAlta = DateTime.Now;
             return View(proyector);
