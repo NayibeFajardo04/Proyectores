@@ -4,7 +4,7 @@ namespace WebApp.Models
 {
     public class Proyector
     {
-
+        
         public int Id { get; set; }
         [Required(ErrorMessage = "La marca es requerida")]
         [StringLength(24)]
