@@ -1,4 +1,5 @@
-﻿@model Proyector
+﻿@using WebApp.ViewModels;
+@model HomeCreateViewModel;
 @{
     ViewData["Title"] = "Nuevo Proyector";
 }
@@ -8,12 +9,6 @@
         <form asp-controller="Home" asp-action="Create">
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group mb-3">
-                <label class="form-label">Número de proyector:</label>
-                <input type="number" class="form-control" asp-for="Id" id="Id"/>
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-
             <div class="form-group mb-3">
                 <label class="form-label" asp-for="Marca">Marca de proyector:</label>
                 <input type="text" class="form-control" asp-for="Marca" id="Marca"/>
