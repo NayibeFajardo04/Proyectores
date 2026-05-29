@@ -4,11 +4,7 @@ namespace WebApp.Models
 {
     public class Proyector
     {
-<<<<<<< HEAD
-        
-=======
         [Key]
->>>>>>> hacer-persistente-la-aplicacion
         public int Id { get; set; }
         
         [Required(ErrorMessage = "La marca es requerida")]
