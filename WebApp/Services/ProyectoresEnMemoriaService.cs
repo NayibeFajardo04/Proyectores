@@ -16,7 +16,7 @@ namespace WebApp.Services
 
         public IEnumerable<Proyector> GetAll()
         {
-           return _proyectores;
+            return _proyectores;
         }
 
         private static List<Proyector> LoadData()
@@ -64,6 +64,26 @@ namespace WebApp.Services
             });
 
             return proyectores;
+        }
+
+        public Proyector GetProyectorById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Proyector proyector)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Proyector? Delete(Proyector proyector)
+        {
+            throw new NotImplementedException();
         }
     }
 

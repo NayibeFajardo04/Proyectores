@@ -6,7 +6,10 @@ namespace WebApp.Services
     {
         IEnumerable<Proyector> GetAll();
         void AddProyector(Proyector proyector);
-        
+        Proyector? GetProyectorById (int id);
+        void Update(Proyector proyector);
+        Proyector? Delete(Proyector proyector);
+
         //void EditProyector(int Id, Proyector proyector);
         //void DeleteProyector(int Id);
 
