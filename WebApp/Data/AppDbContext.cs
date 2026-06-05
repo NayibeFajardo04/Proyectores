@@ -16,7 +16,12 @@ namespace WebApp.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Departamento>().ToTable("Departamentos").HasData(
+            modelBuilder.Entity<Departamento>().ToTable("Departamentos")
+                //.HasMany<Proyector>(e => e.Proyectores)
+                //.WithOne<Proyector>(e => e.Departamento)
+                //.HasForeignKey(e => e.DepartamentoId)
+                //.IsRequired()
+                .HasData(
                 new Departamento(){Id=1, Titulo = "DEPARTAMENTO DE SISTEEMAS Y COMPUTACION"}, 
                 new Departamento(){Id=2, Titulo = "DEPARTAMENTO DE INGENIERIA INDUSTRIAL"},
                 new Departamento(){Id=3, Titulo = "DEPARTAMENTO DE CIENCIAS DE LA TIERRA"},
@@ -25,7 +30,8 @@ namespace WebApp.Data
                 new Departamento(){Id=6, Titulo = "DEPARTAMENTO DE INGENIERIA QUIMICA Y BIOQUIMICA"},
                 new Departamento(){Id=7, Titulo = "DEPARTAMENTO DE CIENCIAS BASICAS"}
                 );
-            modelBuilder.Entity<Proyector>().ToTable("Proyectores");
+
+            modelBuilder.Entity<Proyector>().ToTable("Proyectores").HasOne(e => e.Departamento).WithMany(e => e.Proyectores).HasForeignKey(e => e.DepartamentoId).IsRequired();
         }
         
     }
